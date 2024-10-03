@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Food Post</title>
+    <link rel="stylesheet" href="static/addpoststyle.css">
+</head>
+<body>
+    <h1>Add New Food Post</h1>
+    <form id="addFoodPostForm">
+        <input type="text" name="food_title" placeholder="Food Title" required>
+        <label for="meal_quantity">Meal Quantity (number of people):</label>
+        <select name="meal_quantity" required>
+            <option value="">Select Meal Quantity</option>
+            <!-- Dropdown for meal quantity from 1 to 20 -->
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+        <label for="expiration_time">Expiration Until:</label>
+        <input type="datetime-local" name="expiration_time" required>
+        <input type="text" name="contact_details" placeholder="Contact Details" required>
+        <button type="submit">Add Food Post</button>
+    </form>
+    <button id="cancelBtn">Cancel</button>
+    <script src="script/addpostscript.js"></script>
+</body>
+</html>
