@@ -134,7 +134,7 @@ app.post('/api/food/add', (req, res) => {
     db.query(query, [restaurant_id, food_title, meal_quantity, expiry, contact_details], (err, results) => {
         console.log(err);
         if (err) return res.status(500).send(err);
-        res.send('Food post added successfully.');
+        res.redirect('/templates/restaurant_dashboard.html');
     });
 });
 
