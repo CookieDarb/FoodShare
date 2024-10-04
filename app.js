@@ -138,6 +138,16 @@ app.post('/api/food/add', (req, res) => {
     });
 });
 
+// Fetch past posts for the logged-in restaurant
+app.get('/api/restaurant/posts', (req, res) => {
+    const restaurant_id = req.session.user.id; // Assuming the user is logged in and their ID is in session
+
+    const query = 'SELECT * FROM food_posts WHERE restaurant_id = ?';
+    db.query(query, [restaurant_id], (err, results) => {
+        if (err) return res.status(500).send(err);
+        res.json(results);
+    });
+});
 
 
 app.get('/api/food/available', (req, res) => {
