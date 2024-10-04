@@ -145,9 +145,10 @@ app.get('/api/restaurant/posts', (req, res) => {
     const query = 'SELECT * FROM food_posts WHERE restaurant_id = ?';
     db.query(query, [restaurant_id], (err, results) => {
         if (err) return res.status(500).send(err);
-        res.json(results);
+        res.json(results); // Return both active and expired posts
     });
 });
+
 
 
 app.get('/api/food/available', (req, res) => {
@@ -158,22 +159,51 @@ app.get('/api/food/available', (req, res) => {
     });
 });
 
-app.post('/api/food/accept/:id', (req, res) => {
+// Endpoint to mark a post as accepted by the restaurant
+app.post('/api/food/mark-accepted/:id', (req, res) => {
     const foodPostId = req.params.id;
-    const query = 'UPDATE food_posts SET status = "accepted" WHERE id = ?';
-    db.query(query, [foodPostId], (err, result) => {
-        if (err) return res.status(500).send(err);
-        res.send('Food post accepted');
+    
+    // Ensure the post belongs to the logged-in restaurant
+    const restaurant_id = req.session.user.id;
+
+    const query = 'UPDATE food_posts SET status = "accepted" WHERE id = ? AND restaurant_id = ?';
+    db.query(query, [foodPostId, restaurant_id], (err, result) => {
+        if (err) return res.status(500).send('Error updating post status');
+        if (result.affectedRows === 0) {
+            return res.status(404).send('Post not found or not authorized');
+        }
+        res.send('Post marked as accepted');
     });
 });
 
-// Automatic post deletion based on expiration
+
+
+// Endpoint to delete a food post by ID
+app.delete('/api/food/delete/:id', (req, res) => {
+    const foodPostId = req.params.id;
+    
+    // Ensure the post belongs to the logged-in restaurant
+    const restaurant_id = req.session.user.id;
+
+    const query = 'DELETE FROM food_posts WHERE id = ? AND restaurant_id = ?';
+    db.query(query, [foodPostId, restaurant_id], (err, result) => {
+        if (err) return res.status(500).send('Error deleting post');
+        if (result.affectedRows === 0) {
+            return res.status(404).send('Post not found or not authorized');
+        }
+        res.send('Post deleted successfully');
+    });
+});
+
+
+// Automatic post expiration based on time
 setInterval(() => {
-    const query = 'DELETE FROM food_posts WHERE expiry < NOW()';
+    const query = 'UPDATE food_posts SET status = "expired" WHERE expiry < NOW() AND status = "active"';
     db.query(query, (err) => {
         if (err) console.error(err);
     });
 }, 3600000); // Run every hour
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

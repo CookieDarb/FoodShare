@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const foodPostsOverview = document.getElementById('foodPostsOverview');
             posts.forEach(post => {
                 const postElement = document.createElement('div');
-                postElement.innerHTML = `<h3>${post.food_title}</h3><p>Quantity: ${post.meal_quantity}</p><button onclick="acceptFoodPost(${post.id})">Accept</button>`;
+                postElement.innerHTML = `<h3>${post.food_title}</h3><p>Quantity: ${post.meal_quantity}</p>`;
                 foodPostsOverview.appendChild(postElement);
             });
         });
