@@ -12,7 +12,7 @@
             <img src="../static/logo.png" alt="FoodShare Logo">
         </div>
         <h2>Create Your Account</h2>
-        <form action="/register" method="POST" onsubmit="return validateRegisterForm()">
+        <form action="/api/register" method="POST" id="registerForm">
             <div class="input-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -33,8 +33,8 @@
                 <label for="role">I am a:</label>
                 <select id="role" name="role" required>
                     <option value="" disabled selected>Select your role</option>
-                    <option value="donor">Donor</option>
-                    <option value="recipient">Recipient</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="ngo">NGO</option>
                 </select>
             </div>
             <button type="submit" class="btn">Register</button>

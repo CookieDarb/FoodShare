@@ -12,7 +12,7 @@
             <img src="../static/logo.png" alt="FoodShare Logo">
         </div>
         <h2>Login to FoodShare</h2>
-        <form action="/login" method="POST" onsubmit="return validateForm()">
+        <form action="/api/login" method="POST" id="loginForm">
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>

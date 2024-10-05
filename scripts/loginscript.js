@@ -1,19 +1,28 @@
-// validation.js
+// document.getElementById('loginForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const formData = {
+//         email: document.getElementById('email').value,
+//         password: document.getElementById('password').value
+//     };
 
-function validateForm() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (email === "" || password === "") {
-        alert("Please fill in all fields.");
-        return false;
-    }
-
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-
-    return true;
-}
+//     fetch('/api/login', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json' // Set the content type to JSON
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.message) {
+//             // Redirect based on user role
+//             if (data.user.role === 'restaurant') {
+//                 window.location.href = 'restaurant_dashboard.html';
+//             } else {
+//                 window.location.href = 'ngo_dashboard.html';
+//             }
+//         } else {
+//             alert('Login failed: ' + data);
+//         }
+//     });
+// });

@@ -1,45 +1,34 @@
-// validation.js
+// document.getElementById('registerForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const formData = {
+//         name: document.getElementById('name').value,
+//         email: document.getElementById('email').value,
+//         password: document.getElementById('password').value,
+//         role: document.getElementById('role').value
+//     };
 
-function validateForm() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (email === "" || password === "") {
-        alert("Please fill in all fields.");
-        return false;
-    }
-
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-
-    return true;
-}
-
-function validateRegisterForm() {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
-    const role = document.getElementById("role").value;
-
-    if (name === "" || email === "" || password === "" || confirmPassword === "" || role === "") {
-        alert("Please fill in all fields.");
-        return false;
-    }
-
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return false;
-    }
-
-    return true;
-}
+//     fetch('/api/register', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json', // Inform the server that you're sending JSON
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then(response => response.json())  // Expecting a JSON response from the server
+//     .then(data => {
+//         if (data.message === 'Registration successful') {
+//             // Redirect based on the user's role
+//             if (data.role === 'restaurant') {
+//                 window.location.href = '/templates/restaurant_dashboard.html';
+//             } else if (data.role === 'ngo') {
+//                 window.location.href = '/templates/ngo_dashboard.html';
+//             }
+//         } else {
+//             alert('Registration failed: ' + data.message);
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         alert('An error occurred during registration. Please try again.');
+//     });
+// });
