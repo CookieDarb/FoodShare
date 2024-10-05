@@ -32,3 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             foodPostsOverview.innerHTML = '<p>Error loading food posts.</p>';
         });
 });
+
+document.getElementById('logoutButton').addEventListener('click', () => {
+    fetch('/api/logout')
+        .then(() => {
+            window.location.href = '/'; // Redirect to home page after logout
+        })
+        .catch(error => {
+            console.error('Error logging out:', error);
+        });
+});
+

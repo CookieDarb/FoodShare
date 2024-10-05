@@ -41,6 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
+document.getElementById('logoutButton').addEventListener('click', () => {
+    fetch('/api/logout')
+        .then(() => {
+            window.location.href = '/'; // Redirect to home page after logout
+        })
+        .catch(error => {
+            console.error('Error logging out:', error);
+        });
+});
+
 // Function to delete a post by ID
 function deletePost(postId, postElement) {
     fetch(`/api/food/delete/${postId}`, {
