@@ -1,0 +1,164 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full height */
+}
+
+/* Header Section */
+header {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #c9e4c5;
+    margin: 5px 0 0 0;
+}
+
+.search-bar {
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #006400;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Centered Navigation */
+.center-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.center-nav ul li {
+    margin: 0 15px;
+}
+
+.center-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+.center-nav ul li a:hover {
+    color: #c9e4c5; /* Light green hover effect */
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-button {
+    background-color: #021702; /* Dark Green */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #66ff66; /* Much lighter green on hover */
+    color: #000; /* Change text color to black on hover */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #000;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    flex: 1; /* Allow hero section to grow and fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+.hero-content h2 {
+    font-size: 42px;
+    color: #c9e4c5; /* Light Green for headline */
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+/* Footer Section */
+footer {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #c9e4c5;
+}
