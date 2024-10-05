@@ -1,0 +1,120 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Wrapper for the main content and footer positioning */
+.page-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section */
+header {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.header-nav {
+    text-align: right;
+}
+
+.header-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.header-nav .nav-link:hover {
+    color: #c9e4c5; /* Light green on hover */
+}
+
+/* Contact and About Section Styles */
+.contact-section, .about-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: justify; /* Distribute the text across the width */
+    flex: 1;
+}
+
+.contact-section h2, .about-section h2 {
+    color: #c9e4c5; /* Light Green */
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+}
+
+.contact-details, .about-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #fff;
+    text-align: justify; /* Justify text alignment */
+}
+
+.contact-details p strong, .about-section p strong {
+    color: #c9e4c5; /* Light Green */
+}
+
+/* Footer Section */
+footer {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #c9e4c5;
+}

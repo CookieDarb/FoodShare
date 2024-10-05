@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header Section */
+header {
+    background-color: #035103; /* Darker Green */
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+/* Home Link Positioned at Right */
+.header-nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.header-nav .home-link {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.header-nav .home-link:hover {
+    color: #66ff66; /* Light green on hover */
+}
+
+/* Active and Visited State */
+.header-nav .home-link:active, 
+.header-nav .home-link:visited {
+    color: #66ff66; /* Light green when clicked or visited */
+}
+
+/* About Section */
+.about-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: #c9e4c5; /* Light green text */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #003300; /* Darker Green */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #c9e4c5;
+}
