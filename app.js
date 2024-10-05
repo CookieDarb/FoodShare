@@ -34,7 +34,7 @@ db.connect((err) => {
 
 // API Endpoints
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname,'templates','home.html'));
 });
 
 // Serve login and register pages
@@ -61,25 +61,27 @@ app.get('/templates/addpost.html', (req, res) => {
 });
 
 // Registration Endpoint
+// Registration Endpoint
 app.post('/api/register', (req, res) => {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, mobile, city, address } = req.body;
 
     // Add input validation for the role
     if (!['restaurant', 'ngo'].includes(role)) {
-        return res.status(400).json({message:'Invalid role specified.'});
+        return res.status(400).json({ message: 'Invalid role specified.' });
     }
 
     // Hash the password before storing
     bcrypt.hash(password, 10, (err, hash) => {
         if (err) return res.status(500).send('Error hashing password');
 
-        const query = 'INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)';
-        db.query(query, [name, email, hash, role], (err, results) => {
+        // Modify the query to include mobile, city, and address
+        const query = `INSERT INTO users (name, email, password, role, mobile, city, address) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+        db.query(query, [name, email, hash, role, mobile, city, address], (err, results) => {
             if (err) {
                 return res.status(500).send('Error registering user: ' + err);
             }
             // Store user information in session
-            req.session.user = { id: results.insertId, email, role }; // Save relevant info
+            req.session.user = { id: results.insertId, email, role, name, mobile, city, address }; // Save relevant info
 
             // Redirect based on role
             if (role === 'restaurant') {
@@ -90,6 +92,7 @@ app.post('/api/register', (req, res) => {
         });
     });
 });
+
 
 // Login Endpoint
 app.post('/api/login', (req, res) => {
@@ -123,20 +126,24 @@ app.post('/api/login', (req, res) => {
 
 
 // Food post addition
+// Food post addition
 app.post('/api/food/add', (req, res) => {
-    const { food_title, meal_quantity, expiry, contact_details } = req.body;
-    console.log(food_title,meal_quantity,expiry,contact_details);
-    // Get the restaurant_id from the session
-    const restaurant_id = req.session.user.id; // Automatically use the logged-in restaurant's ID
-    console.log(req.session.user);
+    const { food_title, meal_quantity, expiry } = req.body;
 
-    const query = 'INSERT INTO food_posts (restaurant_id, food_title, meal_quantity, expiry, contact_details, status) VALUES (?, ?, ?, ?, ?, "active")';
+    // Get the restaurant_id and contact details from the session
+    const { id: restaurant_id, mobile, city, address } = req.session.user;
+
+    const contact_details = `Mobile: ${mobile}, City: ${city}, Address: ${address}`;
+
+    const query = `INSERT INTO food_posts (restaurant_id, food_title, meal_quantity, expiry, contact_details, status)
+                   VALUES (?, ?, ?, ?, ?, "active")`;
+
     db.query(query, [restaurant_id, food_title, meal_quantity, expiry, contact_details], (err, results) => {
-        console.log(err);
         if (err) return res.status(500).send(err);
         res.redirect('/templates/restaurant_dashboard.html');
     });
 });
+
 
 // Fetch past posts for the logged-in restaurant
 app.get('/api/restaurant/posts', (req, res) => {
@@ -154,16 +161,17 @@ app.get('/api/restaurant/posts', (req, res) => {
 // Endpoint to get available food posts including restaurant name and contact details
 app.get('/api/food/available', (req, res) => {
     const query = `
-        SELECT food_posts.*, users.name AS restaurant_name
-        FROM food_posts
-        JOIN users ON food_posts.restaurant_id = users.id
-        WHERE expiry > NOW() AND status = "active"
+        SELECT fp.*, u.name AS restaurant_name, u.mobile AS restaurant_mobile, u.city AS restaurant_city, u.address AS restaurant_address 
+        FROM food_posts fp
+        JOIN users u ON fp.restaurant_id = u.id
+        WHERE fp.expiry > NOW() AND fp.status = "active"
     `;
     db.query(query, (err, results) => {
         if (err) return res.status(500).send(err);
-        res.json(results); // Send the results back to the frontend
+        res.json(results);
     });
 });
+
 
 
 // Endpoint to mark a post as accepted by the restaurant

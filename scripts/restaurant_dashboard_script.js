@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${post.food_title}</h3>
                     <p>Quantity: ${post.meal_quantity}</p>
                     <p>Expiry: ${new Date(post.expiry).toLocaleString()}</p>
-                    <p>Contact: ${post.contact_details}</p>
                     <p>Status: ${statusMessage}</p>
                     <button class="delete-btn" data-id="${post.id}">Delete</button>
                     ${post.status === 'active' ? `<button onclick="markAsAccepted(${post.id})">Mark as Accepted</button>` : ''}
@@ -50,7 +49,6 @@ document.getElementById('logoutButton').addEventListener('click', () => {
             console.error('Error logging out:', error);
         });
 });
-
 // Function to delete a post by ID
 function deletePost(postId, postElement) {
     fetch(`/api/food/delete/${postId}`, {
