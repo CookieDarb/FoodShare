@@ -151,13 +151,20 @@ app.get('/api/restaurant/posts', (req, res) => {
 
 
 
+// Endpoint to get available food posts including restaurant name and contact details
 app.get('/api/food/available', (req, res) => {
-    const query = 'SELECT * FROM food_posts WHERE expiry > NOW() AND status = "active"';
+    const query = `
+        SELECT food_posts.*, users.name AS restaurant_name
+        FROM food_posts
+        JOIN users ON food_posts.restaurant_id = users.id
+        WHERE expiry > NOW() AND status = "active"
+    `;
     db.query(query, (err, results) => {
         if (err) return res.status(500).send(err);
-        res.json(results);
+        res.json(results); // Send the results back to the frontend
     });
 });
+
 
 // Endpoint to mark a post as accepted by the restaurant
 app.post('/api/food/mark-accepted/:id', (req, res) => {
