@@ -1,0 +1,114 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #c9e4c5;
+    margin: 5px 0 0 0;
+}
+
+/* Navigation Bar */
+.header-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.header-nav .nav-link:hover {
+    color: #c9e4c5; /* Light green on hover */
+}
+
+/* Login Section */
+.login-container {
+    background-color: #000;
+    color: #fffffffe;
+    padding: 60px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.login-container h2 {
+    color: #c9e4c5; /* Light Green */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #004d00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c9e4c5;
+    color: #000;
+}
+
+/* Footer Styles (if needed) */
+footer {
+    background-color: #004d00; /* Darker Green */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
