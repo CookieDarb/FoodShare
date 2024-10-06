@@ -37,6 +37,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'templates','home.html'));
 });
 
+app.get('/about.html',(req,res)=>{
+    res.sendFile(path.join(__dirname,'templates','about.html'));
+});
+
+app.get('/contact.html',(req,res)=>{
+    res.sendFile(path.join(__dirname,'templates','contact.html'));
+});
+
 // Serve login and register pages
 app.get('/templates/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'login.html'));
@@ -159,19 +167,64 @@ app.get('/api/restaurant/posts', (req, res) => {
 
 
 // Endpoint to get available food posts including restaurant name and contact details
+// Endpoint to get available food posts including restaurant name and contact details
 app.get('/api/food/available', (req, res) => {
-    const query = `
-        SELECT fp.*, u.name AS restaurant_name, u.mobile AS restaurant_mobile, u.city AS restaurant_city, u.address AS restaurant_address 
-        FROM food_posts fp
-        JOIN users u ON fp.restaurant_id = u.id
-        WHERE fp.expiry > NOW() AND fp.status = "active"
-    `;
-    db.query(query, (err, results) => {
+    const ngo_id = req.session.user.id;
+    
+    // Retrieve the city of the NGO from the database
+    const ngoCityQuery = `SELECT city FROM users WHERE id = ?`;
+    
+    db.query(ngoCityQuery, [ngo_id], (err, ngoResults) => {
         if (err) return res.status(500).send(err);
-        res.json(results);
+        
+        if (ngoResults.length === 0) {
+            return res.status(404).send('NGO not found.');
+        }
+        
+        const ngoCity = ngoResults[0].city;
+
+        // Updated query to select food posts from restaurants in the same city as the NGO
+        const foodPostsQuery = `
+            SELECT fp.*, u.name AS restaurant_name, u.mobile AS restaurant_mobile, 
+                   u.city AS restaurant_city, u.address AS restaurant_address 
+            FROM food_posts fp
+            JOIN users u ON fp.restaurant_id = u.id
+            WHERE fp.expiry > NOW() 
+              AND fp.status = "active" 
+              AND u.city = ?  -- Filter by city
+        `;
+
+        db.query(foodPostsQuery, [ngoCity], (err, results) => {
+            if (err) return res.status(500).send(err);
+            res.json(results);
+        });
     });
 });
 
+
+app.get('/api/restaurant/details', (req, res) => {
+    const restaurantId = req.session.user.id; // Assuming session contains the logged-in restaurant ID
+    const query = 'SELECT name FROM users WHERE id = ? AND role = "restaurant"';
+
+    db.query(query, [restaurantId], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Internal server error' });
+        if (results.length === 0) return res.status(404).json({ error: 'Restaurant not found' });
+
+        res.json(results[0]);  // Return restaurant name
+    });
+});
+
+app.get('/api/ngo/details', (req, res) => {
+    const ngoId = req.session.user.id; // Assuming session contains the logged-in ngo ID
+    const query = 'SELECT name FROM users WHERE id = ? AND role = "ngo"';
+
+    db.query(query, [ngoId], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Internal server error' });
+        if (results.length === 0) return res.status(404).json({ error: 'ngo not found' });
+
+        res.json(results[0]);  // Return ngo name
+    });
+});
 
 
 // Endpoint to mark a post as accepted by the restaurant

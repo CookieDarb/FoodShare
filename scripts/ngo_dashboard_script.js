@@ -1,6 +1,16 @@
 // Fetch and display available food posts for NGOs
 // Fetch and display available food posts for NGOs
 document.addEventListener('DOMContentLoaded', () => {
+    fetch('/api/ngo/details')  // Adjust this endpoint based on your backend logic
+    .then(response => response.json())
+    .then(ngo => {
+        const ngoNameElement = document.getElementById('ngoName');
+        ngoNameElement.innerText = ngo.name;  // Display ngo's name
+    })
+    .catch(error => {
+        console.error('Error fetching ngo details:', error);
+    });
+
     fetch('/api/food/available')
     .then(response => response.json())
     .then(posts => {

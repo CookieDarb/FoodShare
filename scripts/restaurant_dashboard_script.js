@@ -1,5 +1,16 @@
 // Fetch and display past food posts for the restaurant
 document.addEventListener('DOMContentLoaded', () => {
+
+    fetch('/api/restaurant/details')  // Adjust this endpoint based on your backend logic
+    .then(response => response.json())
+    .then(restaurant => {
+        const restaurantNameElement = document.getElementById('restaurantName');
+        restaurantNameElement.innerText = restaurant.name;  // Display restaurant's name
+    })
+    .catch(error => {
+        console.error('Error fetching restaurant details:', error);
+    });
+
     fetch('/api/restaurant/posts')  // Adjust this endpoint based on your backend logic
         .then(response => response.json())
         .then(pastPosts => {
