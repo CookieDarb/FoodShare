@@ -1,0 +1,138 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background-color: #004d00; /* Dark Green */
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #c9e4c5;
+    margin: 5px 0 0 0;
+}
+
+/* Navigation Bar */
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav .nav-link {
+    color: #c9e4c5; /* Light Green */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.header-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Registration Container */
+.register-container {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.register-container h2 {
+    color: #c9e4c5; /* Light Green */
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.input-group input, 
+.input-group textarea, 
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #c9e4c5;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus, 
+.input-group select:focus {
+    outline: none;
+    border-color: #66ff66; /* Highlighted Green */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    background-color: #004d00;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #66ff66; /* Lighter Green */
+}
+
+p {
+    margin-top: 20px;
+}
+
+p a {
+    color: #66ff66;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

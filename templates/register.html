@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodShare - Register</title>
-    <link rel="stylesheet" href="../static/loginstyle.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">
-            <img src="../static/logo.png" alt="FoodShare Logo">
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FoodShare</h1>
+                <p>Share Food, Share Hope</p> <!-- Tagline under FoodShare -->
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+            </nav>
         </div>
+    </header>
+
+    <!-- Registration Container -->
+    <div class="register-container">
         <h2>Create Your Account</h2>
         <form action="/api/register" method="POST" id="registerForm">
             <div class="input-group">
@@ -53,6 +65,8 @@
             <p>Already have an account? <a href="login.html">Login here</a></p>
         </form>
     </div>
-    <script src="../scripts/registerscript.js"></script>
+
+    <!-- Link to JavaScript -->
+    <script src="scripts/registerscript.js"></script>
 </body>
 </html>
