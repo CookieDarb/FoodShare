@@ -1,164 +1,191 @@
-/* Global Styles */
-body {
-    font-family: 'Merriweather', serif;
+/* General Styles */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes at least full height */
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* White background for freshness */
+    color: #333; /* Dark gray for readability */
+    line-height: 1.6;
+    height: 100%;
 }
 
-/* Header Section */
+/* Header Styles */
 header {
-    background-color: #004d00; /* Darker Green */
-    padding: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    padding: 10px; /* Reduced header height */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    align-items: center;
 }
 
 .logo h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
+    font-size: 36px;
+    color: #ffffff; /* White for contrast */
+    margin: 0; /* Remove default margin */
 }
 
 .logo p {
     font-size: 14px;
-    color: #c9e4c5;
-    margin: 5px 0 0 0;
+    color: #FFAA30; /* White for tagline */
+    margin: 0; /* Reduced gap between title and tagline */
 }
 
+/* Navigation Styles */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Space between nav items */
+}
+
+nav ul li a {
+    color: #ffffff; /* White for nav links */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFAA30; /* Warm Amber on hover */
+}
+
+/* Search Bar Styles */
 .search-bar {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between search input and button */
 }
 
 .search-bar input {
     padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
-    width: 300px;
+    border: 2px solid #A8D8B9; /* Sage Green border */
+    border-radius: 5px; /* Rounded corners */
+    width: 250px; /* Fixed width for search bar */
+    transition: border-color 0.3s;
 }
 
-.search-bar button {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #006400;
+.search-bar input:focus {
+    border-color: #2C6E49; /* Deep Green border on focus */
+}
+
+/* Button Styles */
+button {
+    background-color: #FFAA30; /* Warm Amber */
+    color: #3e3e3e; /* Dark gray text for buttons */
     border: none;
-    border-radius: 5px;
+    padding: 12px 25px;
     cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 16px;
 }
 
-/* Centered Navigation */
-.center-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.center-nav ul li {
-    margin: 0 15px;
-}
-
-.center-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    position: relative;
-}
-
-.center-nav ul li a:hover {
-    color: #c9e4c5; /* Light green hover effect */
-}
-
-/* Auth Buttons */
-.auth-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.auth-button {
-    background-color: #021702; /* Dark Green */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.auth-button:hover {
-    background-color: #66ff66; /* Much lighter green on hover */
-    color: #000; /* Change text color to black on hover */
+button:hover {
+    background-color: #FF8F00; /* Darker Amber on hover */
+    transform: scale(1.05); /* Slight scale effect */
 }
 
 /* Hero Section */
 .hero {
-    background-color: #000;
-    padding: 60px 20px;
-    text-align: center;
-    color: #fff;
-    flex: 1; /* Allow hero section to grow and fill space */
+    background: url(../foodshare.jpg) no-repeat center center/cover; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1500px;
+    height: 400px;
+    
+    height: 67vh; /* Adjusted height */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    align-items: center;
+    justify-content: flex-start; /* Align text to the left */
+    text-align: left; /* Left-align text */
+    color: #fff; /* White text for hero content */
+    padding: 20px; /* Padding for hero content */
 }
 
 .hero-content h2 {
-    font-size: 42px;
-    color: #c9e4c5; /* Light Green for headline */
-    margin-bottom: 20px;
+    font-size: 40px; /* Large size for the main message */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for clarity */
 }
 
 .hero-content p {
     font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
-    color: #fff;
+    margin-top: 10px;
+}
+
+/* About Section */
+.about {
+    padding: 20px;
+    text-align: center; /* Center align text in about section */
 }
 
 /* Footer Section */
 footer {
-    background-color: #004d00; /* Darker Green */
-    padding: 20px 0;
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    color: #ffffff; /* White text */
+    height: 8%;
     text-align: center;
-    color: white;
+    padding: 20px 0;
+    position: relative; /* Position for copyright */
+    margin-top: auto; /* Ensure footer sticks to bottom */
 }
 
-footer ul {
+footer p {
+    margin: 5px 0; /* Reduced margin for footer elements */
+}
+
+footer nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flex display for footer links */
+    justify-content: center; /* Center the footer links */
 }
 
-footer ul li {
-    margin: 0 15px;
+footer nav ul li {
+    margin: 0 10px; /* Space between footer links */
 }
 
-footer ul li a {
-    color: white;
+footer nav ul li a {
+    color: #FFAA30; /* Warm Amber */
     text-decoration: none;
-    font-size: 14px;
 }
 
-footer ul li a:hover {
-    color: #c9e4c5;
+footer nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Additional Styles for Aesthetic Vibes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    margin: 40px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
 }

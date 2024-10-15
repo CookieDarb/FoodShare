@@ -3,13 +3,13 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #333;
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark gray for text */
     line-height: 1.6;
     height: 100%;
 }
 
-/* Flexbox layout for full-page height */
+/* Flexbox for full page height */
 body {
     display: flex;
     flex-direction: column;
@@ -25,76 +25,97 @@ header {
 
 .header-container {
     display: flex;
-    justify-content: space-between; /* Space between logo/tagline and nav */
+    justify-content: space-between; /* Space between logo and Home button */
     align-items: center;
     width: 100%;
 }
 
-.logo-and-tagline {
-    display: flex;
-    flex-direction: column;
+.logo {
+    text-align: left;
 }
 
-.site-title {
+.logo h1 {
     font-size: 36px;
     color: #ffffff;
     margin: 0;
 }
 
-.tagline {
+.logo p {
     font-size: 14px;
     color: #FFAA30;
+    color: ;
     margin: 0;
 }
 
-/* Header Navigation */
-.header-nav {
-    margin-left: auto;
+/* Navigation for the Home button */
+.center-nav {
+    margin-left: auto; /* Push Home button to the right */
 }
 
-.header-nav a {
-    background-color: #FFAA30;
+.center-nav .header-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.center-nav .header-links li {
+    margin: 0 10px;
+}
+
+.center-nav .header-links li a {
+    background-color: #FFAA30; /* Warm Amber */
     color: #3e3e3e;
     border: none;
     padding: 10px 20px;
+    cursor: pointer;
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
     font-size: 16px;
 }
 
-.header-nav a:hover {
-    background-color: #FF8F00;
+.center-nav .header-links li a:hover {
+    background-color: #FF8F00; /* Darker Amber on hover */
     transform: scale(1.05);
 }
 
-/* Contact Section */
-.contact-section {
+/* Help Section */
+.help-section {
     padding: 40px 20px;
-    text-align: left;
-    flex-grow: 1;
-    background-color: #f0f0f0;
-}
-
-.contact-section h2 {
-    font-size: 32px;
-    color: #2C6E49;
-    margin-bottom: 20px;
-}
-
-.contact-details {
-    font-size: 18px;
+    background-color: #ffffff;
     color: #333;
+    flex-grow: 1; /* Allow the section to expand */
+}
+
+.help-section h2 {
+    font-size: 32px;
+    color: #2C6E49; /* Deep Green for heading */
     margin-bottom: 20px;
 }
 
-.contact-details p {
+.help-section h3 {
+    font-size: 24px;
+    color: #2C6E49; /* Light Green for subheadings */
+    margin-bottom: 15px;
+}
+
+.help-section .faq {
+    margin-bottom: 20px;
+}
+
+.help-section .faq h4 {
+    font-size: 20px;
     margin: 10px 0;
+}
+
+.help-section .faq p {
+    font-size: 18px;
+    margin: 5px 0 15px 0;
 }
 
 /* Footer Section */
 footer {
-    background: linear-gradient(to right,  #2C6E49, #A8D8B9);
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
@@ -118,7 +139,7 @@ footer nav ul li {
 }
 
 footer nav ul li a {
-    color: #FFAA30;
+    color: #FFAA30; /* Warm Amber */
     text-decoration: none;
 }
 
@@ -133,11 +154,15 @@ footer nav ul li a:hover {
         align-items: flex-start;
     }
 
-    .contact-section h2 {
+    .help-section h2 {
         font-size: 28px;
     }
 
-    .contact-details {
+    .help-section h3 {
+        font-size: 22px;
+    }
+
+    .help-section p {
         font-size: 16px;
     }
 }

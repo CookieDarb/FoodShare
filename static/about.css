@@ -1,109 +1,144 @@
-/* Global Styles */
-body {
-    font-family: 'Merriweather', serif;
+/* General Styles */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* White background for freshness */
+    color: #333; /* Dark gray for readability */
+    line-height: 1.6;
+    height: 100%;
 }
 
-/* Header Section */
+/* Flexbox for full page height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes the full viewport height */
+}
+
+/* Header Styles */
 header {
-    background-color: #035103; /* Darker Green */
-    padding: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container for logo and tagline */
+.logo-tagline-container {
+    display: flex;
+    flex-direction: column; /* Stack the logo and tagline vertically */
+    align-items: flex-start; /* Align text to the left */
 }
 
 .site-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
+    font-size: 36px;
+    color: #ffffff;
     margin: 0;
 }
 
-/* Home Link Positioned at Right */
-.header-nav {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.header-nav .home-link {
+.tagline {
     font-size: 16px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    color: #FFAA30; /* Amber color for the tagline */
+    margin-top: 5px; /* Small space between logo and tagline */
+}
+
+.header-nav {
+    margin-left: auto; /* Push the Home button to the right */
+}
+
+.header-nav a {
+    background-color: #FFAA30; /* Warm Amber */
+    color: #3e3e3e;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-/* Hover Effect */
-.header-nav .home-link:hover {
-    color: #66ff66; /* Light green on hover */
+.header-nav a:hover {
+    background-color: #FF8F00; /* Darker Amber on hover */
+    transform: scale(1.05);
 }
 
-/* Active and Visited State */
-.header-nav .home-link:active, 
-.header-nav .home-link:visited {
-    color: #66ff66; /* Light green when clicked or visited */
-}
-
-/* About Section */
+/* About Section Styles */
 .about-section {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
+    padding: 40px 20px;
+    text-align: left; /* Align text to the left */
+    flex-grow: 1; /* Allow the about section to expand, pushing the footer down */
+    background: url('../foodshare.jpg') no-repeat center center/cover; /* Background image matching Home page */
 }
 
 .about-section h2 {
-    color: #c9e4c5; /* Light green text */
-    font-size: 36px;
+    font-size: 32px;
+    color: #FF8F00; /* Deep Green for heading */
     margin-bottom: 20px;
 }
 
 .about-section p {
     font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto 20px;
+    color: #151111;
+    margin-bottom: 20px;
+    /*background: rgba(27, 19, 19, 0.8); /* Light background behind text for readability */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Footer Section */
 footer {
-    background-color: #003300; /* Darker Green */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    color: #fff;
+    width: 100%;
+    margin-top: auto; /* Sticky footer */
 }
 
-footer ul {
+footer p {
+    margin: 5px 0;
+}
+
+footer nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
 }
 
-footer ul li {
-    margin: 0 15px;
+footer nav ul li {
+    margin: 0 10px;
 }
 
-footer ul li a {
-    color: #fff;
+footer nav ul li a {
+    color: #FFAA30; /* Warm Amber */
     text-decoration: none;
-    font-size: 14px;
 }
 
-footer ul li a:hover {
-    color: #c9e4c5;
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
 }
