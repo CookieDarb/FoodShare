@@ -113,8 +113,16 @@ app.post('/api/login', (req, res) => {
             bcrypt.compare(password, results[0].password, (err, isMatch) => {
                 if (err) return res.status(500).send(err);
                 if (isMatch) {
-                    // Store user information in session
-                    req.session.user = { id: results[0].id, email, role: results[0].role }; // Save relevant info
+                    // Store user information in session with the same fields as in registration
+                    req.session.user = {
+                        id: results[0].id,
+                        email: results[0].email,
+                        role: results[0].role,
+                        name: results[0].name,
+                        mobile: results[0].mobile,
+                        city: results[0].city,
+                        address: results[0].address
+                    }; // Save relevant info
                     
                     // Redirect based on role
                     if (results[0].role === 'restaurant') {
@@ -122,7 +130,7 @@ app.post('/api/login', (req, res) => {
                     } else {
                         res.redirect('/templates/ngo_dashboard.html');
                     }
-                } else {
+                } else {     
                     res.status(401).send('Invalid credentials');
                 }
             });
@@ -142,6 +150,7 @@ app.post('/api/food/add', (req, res) => {
     const { id: restaurant_id, mobile, city, address } = req.session.user;
 
     const contact_details = `Mobile: ${mobile}, City: ${city}, Address: ${address}`;
+    console.log(contact_details);
 
     const query = `INSERT INTO food_posts (restaurant_id, food_title, meal_quantity, expiry, contact_details, status)
                    VALUES (?, ?, ?, ?, ?, "active")`;
@@ -165,8 +174,6 @@ app.get('/api/restaurant/posts', (req, res) => {
 });
 
 
-
-// Endpoint to get available food posts including restaurant name and contact details
 // Endpoint to get available food posts including restaurant name and contact details
 app.get('/api/food/available', (req, res) => {
     const ngo_id = req.session.user.id;
@@ -276,6 +283,10 @@ app.get('/api/logout', (req, res) => {
 
 
 // Automatic post expiration based on time
+const query = 'UPDATE food_posts SET status = "expired" WHERE expiry < NOW() AND status = "active"';
+db.query(query, (err) => {
+    if (err) console.error(err);
+});
 setInterval(() => {
     const query = 'UPDATE food_posts SET status = "expired" WHERE expiry < NOW() AND status = "active"';
     db.query(query, (err) => {

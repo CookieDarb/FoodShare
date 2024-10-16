@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/food/available')
     .then(response => response.json())
     .then(posts => {
+        console.log(posts);
         const foodPostsOverview = document.getElementById('foodPostsOverview');
         
         // Clear previous content if any
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>City: ${post.restaurant_city}</p>
                 <p>Address: ${post.restaurant_address}</p>
             `;
+            console.log(1);
+            console.log(postElement.innerHTML);
             foodPostsOverview.appendChild(postElement);
         });
     })
