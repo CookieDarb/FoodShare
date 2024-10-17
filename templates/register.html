@@ -15,7 +15,7 @@
                 <p>Share Food, Share Hope</p> <!-- Tagline under FoodShare -->
             </div>
             <nav class="header-nav">
-                <a href="home.html" class="nav-link">Home</a>
+                <button class="auth-button" onclick="window.location.href='home.html'">Home</button>
             </nav>
         </div>
     </header>
@@ -46,8 +46,33 @@
             </div>
             <div class="input-group">
                 <label for="city">City</label>
-                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                <select id="city" name="city" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Thane">Thane</option>
+                    <option value="Vadodara">Vadodara</option>
+                </select>
             </div>
+            
             <div class="input-group">
                 <label for="address">Detailed Address</label>
                 <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
@@ -66,6 +91,6 @@
     </div>
 
     <!-- Link to JavaScript -->
-    <script src="scripts/registerscript.js"></script>
+    <script src="/scripts/registerscript.js"></script>
 </body>
 </html>

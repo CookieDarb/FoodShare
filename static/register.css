@@ -57,8 +57,8 @@ nav ul li a:hover {
 }
 /* Registration Container Styles */
 .register-container {
-    max-width: 400px; /* Maximum width for registration form */
-    margin: 50px auto; /* Center form vertically and horizontally */
+    width: 400px; /* Maximum width for registration form */
+    margin: 20px auto; /* Center form vertically and horizontally */
     padding: 20px; /* Inner padding */
     background-color: white; /* White background for form */
     border-radius: 8px; /* Rounded corners */
@@ -86,7 +86,7 @@ nav ul li a:hover {
 .input-group input, 
 .input-group textarea, 
 .input-group select {
-    width: 100%; /* Full width for inputs */
+    width: 90%; /* Full width for inputs */
     padding: 10px; /* Inner padding for inputs */
     border: 2px solid #A8D8B9; /* Sage Green border */
     border-radius: 5px; /* Rounded corners */
@@ -164,6 +164,30 @@ footer nav ul li a:hover {
     padding: 20px;
 }
 
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-button {
+    background-color: #FFAA30;
+    color: #3e3e3e;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+.auth-button:hover {
+    background-color: #FF8F00;
+    transform: scale(1.05);
+}
+
+
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .header-container {
@@ -175,3 +199,5 @@ footer nav ul li a:hover {
         width: 90%; /* Adjust width on smaller screens */
     }
 }
+
+

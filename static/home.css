@@ -92,13 +92,9 @@ button:hover {
 
 /* Hero Section */
 .hero {
-    background: url(../static/foodshare.jpg) no-repeat center center/cover; 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative; /* Position relative to allow absolute positioning of the overlay */
+    background: url(../static/foodshare.jpeg) no-repeat center center/cover; 
     width: 1500px;
-    height: 400px;
-    
     height: 67vh; /* Adjusted height */
     display: flex;
     align-items: center;
@@ -106,6 +102,24 @@ button:hover {
     text-align: left; /* Left-align text */
     color: #fff; /* White text for hero content */
     padding: 20px; /* Padding for hero content */
+}
+
+/* Overlay for dimming effect */
+.hero::before {
+    content: ''; /* Necessary to make the pseudo-element visible */
+    position: absolute; /* Position it absolutely within the hero section */
+    top: 0; /* Stretch from the top */
+    left: 0; /* Stretch from the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay (adjust the alpha value for darkness) */
+    z-index: 1; /* Ensure the overlay is below the text */
+}
+
+/* Adjust hero content to be on top of the overlay */
+.hero-content {
+    position: relative; /* Positioning relative to the hero section */
+    z-index: 2; /* Ensure it is on top of the overlay */
 }
 
 .hero-content h2 {

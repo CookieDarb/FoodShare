@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pastPosts.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.classList.add('post-item'); // Add a class for styling if needed
+                postElement.classList.add('post-card');
 
                 // Display the status of the post
                 let statusMessage = post.status;
