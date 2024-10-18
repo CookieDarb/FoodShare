@@ -3,22 +3,22 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff; /* White background for freshness */
-    color: #333; /* Dark gray for readability */
+    background-color: #ffffff; 
+    color: #333; 
     line-height: 1.6;
     height: 100%;
 }
 
-/* Flexbox for full page height */
+
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes the full viewport height */
+    min-height: 100vh; 
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -33,8 +33,8 @@ header {
 /* Container for logo and tagline */
 .logo-tagline-container {
     display: flex;
-    flex-direction: column; /* Stack the logo and tagline vertically */
-    align-items: flex-start; /* Align text to the left */
+    flex-direction: column; 
+    align-items: flex-start; 
 }
 
 .site-title {
@@ -45,16 +45,16 @@ header {
 
 .tagline {
     font-size: 16px;
-    color: #FFAA30; /* Amber color for the tagline */
-    margin-top: 5px; /* Small space between logo and tagline */
+    color: #FFAA30;
+    margin-top: 5px; 
 }
 
 .header-nav {
-    margin-left: auto; /* Push the Home button to the right */
+    margin-left: auto; 
 }
 
 .header-nav a {
-    background-color: #FFAA30; /* Warm Amber */
+    background-color: #FFAA30; 
     color: #3e3e3e;
     border: none;
     padding: 10px 20px;
@@ -66,21 +66,21 @@ header {
 }
 
 .header-nav a:hover {
-    background-color: #FF8F00; /* Darker Amber on hover */
+    background-color: #FF8F00; 
     transform: scale(1.05);
 }
 
 /* About Section Styles */
 .about-section {
     padding: 40px 20px;
-    text-align: left; /* Align text to the left */
-    flex-grow: 1; /* Allow the about section to expand, pushing the footer down */
+    text-align: left; 
+    flex-grow: 1; 
     background: url('../foodshare.jpg') no-repeat center center/cover; /* Background image matching Home page */
 }
 
 .about-section h2 {
     font-size: 32px;
-    color: #FF8F00; /* Deep Green for heading */
+    color: #FF8F00; 
     margin-bottom: 20px;
 }
 

@@ -85,7 +85,7 @@ nav ul li a:hover {
 }
 
 .input-group input {
-    width: 100%; /* Full width for inputs */
+    width: 90%; /* Full width for inputs */
     padding: 10px; /* Inner padding for inputs */
     border: 2px solid #A8D8B9; /* Sage Green border */
     border-radius: 5px; /* Rounded corners */
