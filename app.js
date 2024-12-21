@@ -150,7 +150,7 @@ app.post('/api/food/add', (req, res) => {
     const { id: restaurant_id, mobile, city, address } = req.session.user;
 
     const contact_details = `Mobile: ${mobile}, City: ${city}, Address: ${address}`;
-    console.log(contact_details);
+    
 
     const query = `INSERT INTO food_posts (restaurant_id, food_title, meal_quantity, expiry, contact_details, status)
                    VALUES (?, ?, ?, ?, ?, "active")`;
