@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
-const path = require('path'); // Ensure you have this imported
+const path = require('path'); 
 const session = require('express-session');
 var cors=require('cors');
 const app = express();
@@ -141,7 +141,7 @@ app.post('/api/login', (req, res) => {
 });
 
 
-// Food post addition
+
 // Food post addition
 app.post('/api/food/add', (req, res) => {
     const { food_title, meal_quantity, expiry } = req.body;
