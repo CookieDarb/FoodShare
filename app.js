@@ -7,6 +7,8 @@ const session = require('express-session');
 var cors=require('cors');
 const app = express();
 const port = 3000;
+require('dotenv').config();
+
 
 
 
@@ -21,10 +23,10 @@ app.use(cors());
 
 // MySQL Connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'foodshare'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DBNAME
 });
 
 db.connect((err) => {
