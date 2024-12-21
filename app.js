@@ -34,6 +34,7 @@ db.connect((err) => {
     console.log('Connected to MySQL database.');
 });
 
+
 // API Endpoints
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'templates','home.html'));
