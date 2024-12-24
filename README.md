@@ -2,6 +2,8 @@
 
 FoodShare is a platform that connects **NGOs** with **restaurants** to share surplus food. It enables restaurants to post leftover food, which can be claimed by nearby NGOs for distribution to people in need.
 
+![](https://github.com/CookieDarb/FoodShare/blob/main/static/demo-foodshare.gif)
+
 ## Features
 
 - **User Registration and Login:**
