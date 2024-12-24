@@ -1,18 +1,18 @@
-/* General Styles */
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff; /* White background for freshness */
-    color: #333; /* Dark gray for readability */
+    background-color: #ffffff; 
+    color: #333; 
     line-height: 1.6;
     height: 100%;
 }
 
-/* Header Styles */
+
 header {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
-    padding: 10px; /* Reduced header height */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
+    padding: 10px; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,59 +24,59 @@ header {
 
 .logo h1 {
     font-size: 36px;
-    color: #ffffff; /* White for contrast */
-    margin: 0; /* Remove default margin */
+    color: #ffffff; 
+    margin: 0; 
 }
 
 .logo p {
     font-size: 14px;
-    color: #FFAA30; /* White for tagline */
-    margin: 0; /* Reduced gap between title and tagline */
+    color: #FFAA30; 
+    margin: 0; 
 }
 
-/* Navigation Styles */
+
 nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 20px; /* Space between nav items */
+    gap: 20px; 
 }
 
 nav ul li a {
-    color: #ffffff; /* White for nav links */
+    color: #ffffff; 
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #FFAA30; /* Warm Amber on hover */
+    color: #FFAA30; 
 }
 
-/* Search Bar Styles */
+
 .search-bar {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between search input and button */
+    gap: 10px; 
 }
 
 .search-bar input {
     padding: 10px;
-    border: 2px solid #A8D8B9; /* Sage Green border */
-    border-radius: 5px; /* Rounded corners */
-    width: 250px; /* Fixed width for search bar */
+    border: 2px solid #A8D8B9; 
+    border-radius: 5px;
+    width: 250px; 
     transition: border-color 0.3s;
 }
 
 .search-bar input:focus {
-    border-color: #2C6E49; /* Deep Green border on focus */
+    border-color: #2C6E49; 
 }
 
-/* Button Styles */
+
 button {
-    background-color: #FFAA30; /* Warm Amber */
-    color: #3e3e3e; /* Dark gray text for buttons */
+    background-color: #FFAA30; 
+    color: #3e3e3e; 
     border: none;
     padding: 12px 25px;
     cursor: pointer;
@@ -86,45 +86,45 @@ button {
 }
 
 button:hover {
-    background-color: #FF8F00; /* Darker Amber on hover */
-    transform: scale(1.05); /* Slight scale effect */
+    background-color: #FF8F00; 
+    transform: scale(1.05); 
 }
 
-/* Hero Section */
+
 .hero {
-    position: relative; /* Position relative to allow absolute positioning of the overlay */
+    position: relative; 
     background: url(../static/foodshare.jpeg) no-repeat center center/cover; 
     width: 1500px;
-    height: 67vh; /* Adjusted height */
+    height: 67vh; 
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align text to the left */
-    text-align: left; /* Left-align text */
-    color: #fff; /* White text for hero content */
-    padding: 20px; /* Padding for hero content */
+    justify-content: flex-start; 
+    text-align: left; 
+    color: #fff;
+    padding: 20px; 
 }
 
-/* Overlay for dimming effect */
+
 .hero::before {
-    content: ''; /* Necessary to make the pseudo-element visible */
-    position: absolute; /* Position it absolutely within the hero section */
-    top: 0; /* Stretch from the top */
-    left: 0; /* Stretch from the left */
-    right: 0; /* Stretch to the right */
-    bottom: 0; /* Stretch to the bottom */
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay (adjust the alpha value for darkness) */
-    z-index: 1; /* Ensure the overlay is below the text */
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
 }
 
-/* Adjust hero content to be on top of the overlay */
+
 .hero-content {
-    position: relative; /* Positioning relative to the hero section */
-    z-index: 2; /* Ensure it is on top of the overlay */
+    position: relative; 
+    z-index: 2; 
 }
 
 .hero-content h2 {
-    font-size: 40px; /* Large size for the main message */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for clarity */
+    font-size: 40px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .hero-content p {
@@ -132,48 +132,48 @@ button:hover {
     margin-top: 10px;
 }
 
-/* About Section */
+
 .about {
     padding: 20px;
-    text-align: center; /* Center align text in about section */
+    text-align: center; 
 }
 
-/* Footer Section */
+
 footer {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
-    color: #ffffff; /* White text */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
+    color: #ffffff;
     height: 8%;
     text-align: center;
     padding: 20px 0;
-    position: relative; /* Position for copyright */
-    margin-top: auto; /* Ensure footer sticks to bottom */
+    position: relative; 
+    margin-top: auto; 
 }
 
 footer p {
-    margin: 5px 0; /* Reduced margin for footer elements */
+    margin: 5px 0; 
 }
 
 footer nav ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Flex display for footer links */
-    justify-content: center; /* Center the footer links */
+    display: flex; 
+    justify-content: center; 
 }
 
 footer nav ul li {
-    margin: 0 10px; /* Space between footer links */
+    margin: 0 10px; 
 }
 
 footer nav ul li a {
-    color: #FFAA30; /* Warm Amber */
+    color: #FFAA30; 
     text-decoration: none;
 }
 
 footer nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
-/* Additional Styles for Aesthetic Vibes */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -184,7 +184,7 @@ footer nav ul li a:hover {
     margin: 40px 0;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;

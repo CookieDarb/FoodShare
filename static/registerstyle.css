@@ -1,4 +1,4 @@
-/* General styling for body */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-/* Container for the login/register form */
+
 .login-container {
     width: 350px;
     background-color: #fff;
@@ -20,13 +20,13 @@ body {
     text-align: center;
 }
 
-/* Logo styling */
+
 .logo img {
     width: 100px;
     margin-bottom: 20px;
 }
 
-/* Form input field styling */
+
 .input-group {
     margin-bottom: 20px;
     text-align: left;
@@ -48,7 +48,7 @@ body {
     font-size: 16px;
 }
 
-/* Button styling */
+
 .btn {
     width: 100%;
     padding: 10px;
@@ -64,7 +64,7 @@ body {
     background-color: #218838;
 }
 
-/* Styling for the text under the form */
+
 p {
     margin-top: 20px;
     font-size: 14px;
@@ -79,7 +79,7 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Styling for error messages (if needed in future for validation feedback) */
+
 .error-message {
     color: red;
     font-size: 12px;

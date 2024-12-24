@@ -22,20 +22,17 @@ app.use(session({ secret: 'process.env.SESSION_SECRET', resave: false, saveUnini
 app.use(cors());
 
 // MySQL Connection
-const db = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DBNAME,
-    connectionLimit: 5,
-    waitForConnections: true,
-    timeout: 60000
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "foodshare"
 });
 
-// db.connect((err) => {
-//     if (err) throw err;
-//     console.log('Connected to MySQL database.');
-// });
+db.connect((err) => {
+    if (err) throw err;
+    console.log('Connected to MySQL database.');
+});
 
 
 // API Endpoints

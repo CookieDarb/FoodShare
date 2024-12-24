@@ -1,9 +1,9 @@
-/* General Styles */
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Soft background */
+    background-color: #f8f9fa; 
     color: #333;
     height: 100%;
     display: flex;
@@ -13,7 +13,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full height */
+    min-height: 100vh; 
 }
 
 main {
@@ -25,9 +25,9 @@ main {
     text-align: center;
 }
 
-/* Header Styles */
+
 header {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -55,7 +55,7 @@ header {
     margin: 0;
 }
 
-/* Auth Buttons */
+
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -77,10 +77,10 @@ header {
     transform: scale(1.05);
 }
 
-/* Welcome Message */
+
 #welcomeMessage {
     font-size: 36px;
-    color: #2C6E49; /* Brand color */
+    color: #2C6E49; 
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -89,14 +89,14 @@ header {
     color: #FFAA30;
 }
 
-/* Food Posts Section */
+
 #foodPostsOverview {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Space between cards */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
 }
 
-/* Food Post Card */
+
 .post-card {
     background-color: #ffffff;
     padding: 20px;
@@ -137,7 +137,7 @@ header {
     background-color: #FF8F00;
 }
 
-/* Footer */
+
 footer {
     background: linear-gradient(to right, #2C6E49, #A8D8B9);
     color: #ffffff;
@@ -180,7 +180,7 @@ footer nav ul li a:hover {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 10px; /* Space above the button */
+    margin-top: 10px; 
 }
 
 .toggle-button:hover {
@@ -188,33 +188,33 @@ footer nav ul li a:hover {
 }
 
 .posted-by-details {
-    margin-top: 10px; /* Space above the posted by details */
+    margin-top: 10px; 
     padding: 10px;
-    border: 1px solid #ddd; /* Optional border for clarity */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for details */
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
 }
 
-/* Modal Styles */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px; /* Set max width */
+    width: 80%; 
+    max-width: 500px; 
 }
 
 .close-button {

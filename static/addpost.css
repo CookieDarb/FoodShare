@@ -1,4 +1,4 @@
-/* General Styles */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ html, body {
     height: 100%;
 }
 
-/* Header Styles */
+
 header {
     background: linear-gradient(to right, #2C6E49, #A8D8B9);
     padding: 10px;
@@ -33,7 +33,7 @@ header {
     margin: 0;
 }
 
-/* Main Section */
+
 main {
     padding: 40px;
     text-align: center;
@@ -89,7 +89,7 @@ button:hover {
     background-color: #FF8F00;
 }
 
-/* Footer Styles */
+
 footer {
     background: linear-gradient(to right, #2C6E49, #A8D8B9);
     color: #ffffff;

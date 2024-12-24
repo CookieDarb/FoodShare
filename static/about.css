@@ -1,4 +1,4 @@
-/* General Styles */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     min-height: 100vh; 
 }
 
-/* Header Styles */
+
 header {
     background: linear-gradient(to right, #2C6E49, #A8D8B9); 
     padding: 10px;
@@ -30,7 +30,7 @@ header {
     width: 100%;
 }
 
-/* Container for logo and tagline */
+
 .logo-tagline-container {
     display: flex;
     flex-direction: column; 
@@ -70,12 +70,12 @@ header {
     transform: scale(1.05);
 }
 
-/* About Section Styles */
+
 .about-section {
     padding: 40px 20px;
     text-align: left; 
     flex-grow: 1; 
-    background: url('../foodshare.jpg') no-repeat center center/cover; /* Background image matching Home page */
+    background: url('../foodshare.jpg') no-repeat center center/cover; 
 }
 
 .about-section h2 {
@@ -88,19 +88,18 @@ header {
     font-size: 18px;
     color: #151111;
     margin-bottom: 20px;
-    /*background: rgba(27, 19, 19, 0.8); /* Light background behind text for readability */
     padding: 10px;
     border-radius: 5px;
 }
 
-/* Footer Section */
+
 footer {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
     width: 100%;
-    margin-top: auto; /* Sticky footer */
+    margin-top: auto; 
 }
 
 footer p {
@@ -119,7 +118,7 @@ footer nav ul li {
 }
 
 footer nav ul li a {
-    color: #FFAA30; /* Warm Amber */
+    color: #FFAA30; 
     text-decoration: none;
 }
 
@@ -127,7 +126,7 @@ footer nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
